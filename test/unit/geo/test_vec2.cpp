@@ -1,5 +1,6 @@
-#include "geo/geometry/vec2.h"
 #include <gtest/gtest.h>
+
+#include "geo/geometry/vec2.h"
 using hdmap::geo::Cross2D;
 using hdmap::geo::NearEqual;
 using hdmap::geo::Vec2;
@@ -44,5 +45,5 @@ TEST(Vec2Test, NormalizeAndEqual) {
 
   Vec2 c(1.0f + 1e-7f, 2.0f - 1e-7f);
   Vec2 d(1.0f, 2.0f);
-  EXPECT_TRUE(c == d); // 近似比较
+  EXPECT_TRUE(c == d);  // 近似比较
 }
