@@ -11,11 +11,9 @@ struct Vec2 {
   float y{0.f};
 
   Vec2() = default;
-  Vec2(float x_val, float y_val) : x(x_val), y(y_val) {};
+  Vec2(float x_val, float y_val) : x(x_val), y(y_val) {}
 
-  static Vec2 Zero() {
-    return Vec2(0.f, 0.f);
-  };
+  static Vec2 Zero() { return Vec2(0.f, 0.f); }
 
   Vec2 operator+(const Vec2& other) const;
   Vec2 operator-(const Vec2& other) const;

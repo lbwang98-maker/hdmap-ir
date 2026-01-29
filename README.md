@@ -16,7 +16,7 @@ High-precision map IR for Lanelet2/OpenDRIVE: unified geometry/IR, grid index, a
 
 ## Build & test (本地)
 ```bash
-cmake -S . -B build -G "Ninja" -DBUILD_TESTING=ON
+cmake -S . -B build -G "MinGW Makefiles" -DBUILD_TESTING=ON
 cmake --build build
 ctest --test-dir build --output-on-failure
 ```
