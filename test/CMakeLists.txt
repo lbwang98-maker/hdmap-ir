@@ -20,10 +20,20 @@ if(BUILD_TESTING)
 
   target_compile_features(test_ir PRIVATE cxx_std_17)
 
+
+  # IR buidler tests
+  add_executable(test_ir_builder
+    unit/ir/test_ir_basic.cpp
+    unit/ir/test_ir_builder.cpp
+  )
+  target_link_libraries(test_ir_builder PRIVATE gtest_main hdmap_ir_core)
+
+
   include(GoogleTest)
   gtest_discover_tests(test_geo
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     DISCOVERY_TIMEOUT 30
   )
   gtest_discover_tests(test_ir)
+  gtest_discover_tests(test_ir_builder)
 endif()

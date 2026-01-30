@@ -21,6 +21,8 @@ add_library(hdmap_ir_core
   core/ir/tile.h
   core/ir/catalog.h
   core/ir/catalog.cpp
+  core/ir/builder.h
+  core/ir/builder.cpp
 )
 
 target_link_libraries(hdmap_ir_core PUBLIC hdmap_geo)
