@@ -1,4 +1,6 @@
 if(BUILD_TESTING)
+
+  # Geo tests
   add_executable(test_geo
     unit/geo/test_vec2.cpp
     unit/geo/test_segment.cpp
@@ -9,10 +11,19 @@ if(BUILD_TESTING)
       hdmap_geo
   )
   target_compile_features(test_geo PRIVATE cxx_std_17)
-  
+
+  # IR tests
+  add_executable(test_ir
+    unit/ir/test_ir_basic.cpp
+  )
+  target_link_libraries(test_ir PRIVATE gtest_main hdmap_ir_core)
+
+  target_compile_features(test_ir PRIVATE cxx_std_17)
+
   include(GoogleTest)
   gtest_discover_tests(test_geo
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     DISCOVERY_TIMEOUT 30
   )
+  gtest_discover_tests(test_ir)
 endif()

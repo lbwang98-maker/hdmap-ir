@@ -13,3 +13,22 @@ target_include_directories(hdmap_geo
 )
 
 target_compile_features(hdmap_geo PUBLIC cxx_std_17)
+
+add_library(hdmap_ir_core
+  core/ir/status.h
+  core/ir/ids.h
+  core/ir/lane.h
+  core/ir/tile.h
+  core/ir/catalog.h
+  core/ir/catalog.cpp
+)
+
+target_link_libraries(hdmap_ir_core PUBLIC hdmap_geo)
+
+target_include_directories(hdmap_ir_core
+  PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/../include    # include/
+    ${CMAKE_CURRENT_SOURCE_DIR}               # src/
+)
+
+target_compile_features(hdmap_ir_core PUBLIC cxx_std_17)
