@@ -33,9 +33,9 @@ inline Status OkStatus() {
 template <typename T>
 class StatusOr {
  public:
-  StatusOr(const T& value) : status_(OkStatus()), value_(value) {}           // 普通构造函数
-  StatusOr(T&& value) : status_(OkStatus()), value_(std::move(value)) {}     // 移动构造函数
-  StatusOr(const Status& status) : status_(status), value_(std::nullopt) {}  // 错误状态构造函数
+  StatusOr(const T& value) : status_(OkStatus()), value_(value) {}
+  StatusOr(T&& value) : status_(OkStatus()), value_(std::move(value)) {}
+  StatusOr(const Status& status) : status_(status), value_(std::nullopt) {}
 
   bool ok() const {
     return status_.ok();
